@@ -257,7 +257,12 @@ namespace Exercises.Level1
         /// </summary>
         public int TeenSum(int a, int b)
         {
-            throw new NotImplementedException();
+            if (a >= 13 && a <= 19 || b >= 13 && b <= 19)
+            { 
+                return 19; 
+            }
+
+            return a + b;
         }
 
         /// <summary>
@@ -287,19 +292,24 @@ namespace Exercises.Level1
         /// </summary>
         public int TeaParty(int tea, int candy)
         {
-            throw new NotImplementedException();
+            int compare_value = 5;
+            int dubble_tea = tea * 2;
+            int dubble_candy = candy * 2;
+            if (tea < compare_value || candy < compare_value) return 0;
+            if (tea >= dubble_candy || candy >= dubble_tea) return 2;
+            return 1;
         }
 
-        /// <summary>
-        /// Given a string str, if the string starts with "f" return "Fizz". If the string ends with "b"
-        /// return "Buzz". If both the "f" and "b" conditions are true, return "FizzBuzz". In all othe
-        /// cases, return the string unchanged.
-        /// 
-        /// fizzString("fig") → "Fizz"
-        /// fizzString("dib") → "Buzz"
-        /// fizzString("fib") → "FizzBuzz"
-        /// </summary>
-        public string FizzString(string str)
+            /// <summary>
+            /// Given a string str, if the string starts with "f" return "Fizz". If the string ends with "b"
+            /// return "Buzz". If both the "f" and "b" conditions are true, return "FizzBuzz". In all othe
+            /// cases, return the string unchanged.
+            /// 
+            /// fizzString("fig") → "Fizz"
+            /// fizzString("dib") → "Buzz"
+            /// fizzString("fib") → "FizzBuzz"
+            /// </summary>
+            public string FizzString(string str)
         {
             throw new NotImplementedException();
         }
@@ -427,7 +437,11 @@ namespace Exercises.Level1
         /// </summary>
         public int RedTicket(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            if (a == 2 && b == 2 && c == 2) return 10;
+
+            if (a == b && b == c) return 5;
+
+            return (a != b && a != c ? 1 : 0);
         }
 
         /// <summary>
@@ -441,7 +455,11 @@ namespace Exercises.Level1
         /// </summary>
         public int GreenTicket(int a, int b, int c)
         {
-            throw new NotImplementedException();
+
+            if (a == b && b == c) return 20;
+
+            return (a == b || b == c || c == a ? 10 : 0);
+
         }
 
         /// <summary>
@@ -456,7 +474,13 @@ namespace Exercises.Level1
         /// </summary>
         public int BlueTicket(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            int ab = a + b;
+            int bc = b + c;
+            int ac = a + c;
+
+            if (ab == 10 || bc == 10 || ac == 10) return 10;
+
+            return (ab == bc + 10 || ab == ac + 10 ? 5 : 0);
         }
 
         /// <summary>
@@ -470,7 +494,7 @@ namespace Exercises.Level1
         /// </summary>
         public bool ShareDigit(int a, int b)
         {
-            throw new NotImplementedException();
+            return a / 10 == b / 10 || a / 10 == b % 10 || a % 10 == b / 10 || a % 10 == b % 10;
         }
 
         /// <summary>
@@ -485,7 +509,11 @@ namespace Exercises.Level1
         /// </summary>
         public int SumLimit(int a, int b)
         {
-            throw new NotImplementedException();
+            int summ = a + b;
+            int a_digits = a.ToString().Length;
+            int summ_digits= summ.ToString().Length;
+            return a_digits < summ_digits ? a : summ;
+
         }
     }
 }
